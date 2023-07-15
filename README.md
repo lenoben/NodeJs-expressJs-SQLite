@@ -25,3 +25,11 @@ echo "for unix:"
 g++ file_site.cpp -o file_site
 ./file_site
 ```
+
+# The landing page is just a plain html, click on the link to the article page
+
+![Landing page](dump/landing.png)
+
+# This is the article page
+
+![Article page](dump/article_home_page.png)
