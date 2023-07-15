@@ -1,0 +1,16 @@
+  <%- include('_top_field') %>
+  <body>
+    <p />
+    <div class="container">
+      <h1 class="mb-4"><%= article.title %></h1>
+      <div class="text-muted mb-2"><%= article.createdAt.split(" ")[0] %></div>
+      <a href="/article" class="btn btn-secondary">All articles</a>
+      <a href="/article/edit/<%= article.blog_id %>" class="btn btn-primary"
+        >Edit</a
+      >
+      <div class="card mt-4 card-body mb-4">
+        <%- article.sanitizedMarkdown %>
+      </div>
+    </div>
+  </body>
+</html>

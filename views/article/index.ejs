@@ -1,0 +1,42 @@
+  <%- include('_top_field') %>
+  <body>
+    <p />
+    <div class="container">
+      <h1 class="mb-4">An article</h1>
+      <a href="/article/new" class="btn btn-primary"> new article</a>
+      <% boxes.forEach(box => { %>
+      <div class="card mt-4 mb-4">
+        <div class="card-body">
+          <h4 class="card-title"><%= box.title %></h4>
+          <div class="card-subtitle text-muted mb-2">
+            <%= box.createdAt.split(" ")[0] %>
+            <span style="color: red"><%= box.createdAt.split(" ")[1] %></span>
+          </div>
+          <div class="card-text mb-2">
+            <% const description = box.description; %> <% const maxLength = 100;
+            // Set the maximum length you want to display %> <% if
+            (description.length > maxLength) { %> <%= description.slice(0,
+            maxLength) + '...' %> <% } else { %> <%= description %> <% } %>
+          </div>
+          <a href="/article/link/<%= box.slug %>" class="btn btn-primary"
+            >Read more</a
+          >
+          <a href="/article/edit/<%= box.blog_id %>" class="btn btn-info"
+            >Edit</a
+          >
+          <form
+            action="/article/<%= box.blog_id %>?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+          <a href="/article/edit/<%= box.blog_id %>" class="btn btn-info"
+            >Share but it is edit for now</a
+          >
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>

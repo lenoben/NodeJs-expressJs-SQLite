@@ -1,0 +1,15 @@
+node_modules/
+routes/testings.js
+routes/file.js
+test/
+apis/
+logs/*.txt
+data/
+database/admin*
+database/*.db
+*.txt
+*.exe
+INFO*
+.env
+controllers/new_sqlite.js
+file.html
