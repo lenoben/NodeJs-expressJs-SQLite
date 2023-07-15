@@ -6,7 +6,6 @@ apis/
 logs/*.txt
 data/
 database/admin*
-database/*.db
 *.txt
 *.exe
 INFO*

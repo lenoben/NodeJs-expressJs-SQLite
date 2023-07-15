@@ -41,6 +41,7 @@ const initAllDb = () => {
           description TEXT DEFAULT " ",
           markdown TEXT NOT NULL,
           slug TEXT NOT NULL UNIQUE,
+          sanitizedMarkdown TEXT NOT NULL,
           createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
       )
       `;
@@ -216,6 +217,7 @@ const updateDbBlog_article = async (id) => {};
 
 module.exports = {
   initAllDb,
+  shutDb,
   blog: {
     addDbBlog_article,
     addDbBlog_articleReturnItem,
