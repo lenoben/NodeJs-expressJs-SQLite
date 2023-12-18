@@ -12,3 +12,4 @@ INFO*
 .env
 controllers/new_sqlite.js
 file.html
+public/control_length.png
