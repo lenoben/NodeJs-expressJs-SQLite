@@ -13,8 +13,10 @@
     "uuid": "^9.0.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "npm run build && node ./dist/server.js",
+    "build": "tsc && cp index.html dist/ &&cp -r database/ dist/ && cp -r public/ dist/ && cp -r logs/ dist/ && cp -r views/ dist/",
+    "dev": "npm run build && tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "clean": "rm -rf dist/"
   },
   "name": "file_site",
   "version": "1.0.0",
@@ -24,6 +26,16 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "@types/dompurify": "^3.0.5",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/jsdom": "^21.1.6",
+    "@types/method-override": "^0.0.35",
+    "@types/node": "^20.11.20",
+    "@types/uuid": "^9.0.8",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.3.3"
   }
 }
