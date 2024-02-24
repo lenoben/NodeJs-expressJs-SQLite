@@ -13,3 +13,6 @@ INFO*
 controllers/new_sqlite.js
 file.html
 public/control_length.png
+dist/
+a.out
+a.exe

@@ -4,7 +4,7 @@
 
 void runCommand1()
 {
-    int returnValue = system("node server.js");
+    int returnValue = system("npm start");
     std::cout << "The return value1 is " << returnValue << std::endl;
 }
 int main()
