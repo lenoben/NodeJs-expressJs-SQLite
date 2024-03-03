@@ -1,10 +1,9 @@
-const { v4: uuid } = require("uuid");
+import { v4 as uuid } from "uuid";
+import fs from "fs";
+import { promises as fsPromises } from "fs";
+import path from "path";
 
-const fs = require("fs");
-const fsPromises = require("fs").promises;
-const path = require("path");
-
-const logEvents = async (message, logName) => {
+const logEvents = async (message: string, logName: string) => {
   const dateOrTime = new Date();
   const logItem = `${dateOrTime.toUTCString()}\t${uuid()}\t${message}\n`;
 
@@ -22,10 +21,10 @@ const logEvents = async (message, logName) => {
   }
 };
 
-const logger = (req, res, next) => {
+const logger = (req: any, res: any, next: any) => {
   logEvents(`${req.method}\t${req.headers.origin}\t${req.url}`, "reqLog.txt");
   console.log(`${req.method} ${req.path}`);
   next();
 };
 
-module.exports = { logger, logEvents };
+export { logger, logEvents };
