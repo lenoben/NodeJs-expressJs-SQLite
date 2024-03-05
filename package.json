@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "npm run build && node ./dist/server.js",
-    "build": "tsc && cp index.html dist/ &&cp -r database/ dist/ && cp -r public/ dist/ && cp -r logs/ dist/ && cp -r views/ dist/",
+    "build": "tsc && cp index.html dist/ && cp -r database/ dist/ && cp -r public/ dist/; cp -r logs/ dist/; cp -r views/ dist/",
     "dev": "npm run build && tsc-watch --onSuccess \"node ./dist/server.js\"",
     "clean": "rm -rf dist/"
   },
